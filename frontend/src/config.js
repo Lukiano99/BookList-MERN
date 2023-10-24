@@ -1,0 +1,1 @@
+export const BACKEND_SERVICE_URL = 'https://booklist-mern-backend.onrender.com';

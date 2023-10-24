@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router";
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
+import { BACKEND_SERVICE_URL } from "../config";
 
 export const ShowBook = () => {
   const [book, setBook] = useState({});
@@ -11,7 +12,7 @@ export const ShowBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5555/books/${id}`)
+      .get(`${BACKEND_SERVICE_URL}/books/${id}`)
       .then((response) => {
         setBook(response.data);
         setLoading(false);
